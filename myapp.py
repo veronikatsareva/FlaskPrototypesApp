@@ -133,7 +133,7 @@ def stats():
         )
 
         # сохраняем график в директорию static
-        plt.savefig(f"static/pie_{prototype}.png", dpi=300)
+        plt.savefig(f"/home/fromdeath2morning/FlaskPrototypesApp/static/pie_{prototype}.png", dpi=300)
 
         # закрытие необходимо для того, чтобы последующие графики
         # генерировались не в том же "окне"
