@@ -29,7 +29,7 @@ def update_data():
             request.args["planet"],
             request.args["tomatoes"],
             request.args["fruits"].lower().strip(),
-            request.args["vegetables"],
+            request.args["vegetables"].lower().strip(),
             request.args["nuts"].lower().strip(),
             request.args["berries"].lower().strip(),
             request.args["birds"].lower().strip(),
