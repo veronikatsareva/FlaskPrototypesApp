@@ -1,0 +1,154 @@
+<!-- stats.html -- страница со статистикой -->
+{% extends 'base.html' %}
+{% block title %} Статистика {% endblock %}
+{% block content %}
+<h2 align="center"> Результаты </h2>
+<br>
+<!-- источник: https://getbootstrap.com/docs/4.5/content/tables/ -->
+<h3 align="center"> Статистика по метаданным </h3>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Характеристика</th>
+         <th scope="col">Значение</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <th scope="row">1</th>
+         <td>Количество заполненных анкет</td>
+         <td>{{ content[0] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">2</th>
+         <td>Средний возраст заполнивших анкету</td>
+         <td>{{ content[1] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">3</th>
+         <td>Процент любителей помидоров</td>
+         <td>{{ content[2] / content[0] * 100 }}%</td>
+      </tr>
+      <tr>
+         <th scope="row">4</th>
+         <td>Самое популярное время года</td>
+         <td>{{ content[3] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">5</th>
+         <td>Самая популярная планета</td>
+         <td>{{ content[4] }}</td>
+      </tr>
+   </tbody>
+</table>
+<br>
+<h3 align="center"> Статистика по прототипам </h3>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Класс</th>
+         <th scope="col">Количество уникальных объектов</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <th scope="row">1</th>
+         <td>Фрукты</td>
+         <td>{{ content[5][0] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">2</th>
+         <td>Овощи</td>
+         <td>{{ content[5][1] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">3</th>
+         <td>Орехи</td>
+         <td>{{ content[5][2] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">4</th>
+         <td>Ягоды</td>
+         <td>{{ content[5][3] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">5</th>
+         <td>Птицы</td>
+         <td>{{ content[5][4] }}</td>
+      </tr>
+      <tr>
+         <th scope="row">6</th>
+         <td>Растения</td>
+         <td>{{ content[5][5] }}</td>
+      </tr>
+   </tbody>
+</table>
+<br>
+<h3 align="center"> Графики </h3>
+<!-- источник: https://getbootstrap.com/docs/4.5/components/carousel/ -->
+<div id="ProtoCarousel" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+      <li data-target="#ProtoCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#ProtoCarousel" data-slide-to="1"></li>
+      <li data-target="#ProtoCarousel" data-slide-to="2"></li>
+      <li data-target="#ProtoCarousel" data-slide-to="3"></li>
+      <li data-target="#ProtoCarousel" data-slide-to="4"></li>
+      <li data-target="#ProtoCarousel" data-slide-to="5"></li>
+   </ol>
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+         <img src="static/pie_fruits.png" class="d-block w-100" alt="FruitPrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические фрукты</h5>
+            <p>Топ-5 самых прототипических фруктов по результатам анкеты.</p>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="static/pie_vegetables.png" class="d-block w-100" alt="VegetablePrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические овощи</h5>
+            <p>Топ-5 самых прототипических овощей по результатам анкеты.</p>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="static/pie_nuts.png" class="d-block w-100" alt="NutPrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические орехи</h5>
+            <p>Топ-5 самых прототипических орехов по результатам анкеты.</p>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="static/pie_berries.png" class="d-block w-100" alt="BerriePrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические ягоды</h5>
+            <p>Топ-5 самых прототипических ягод по результатам анкеты.</p>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="static/pie_birds.png" class="d-block w-100" alt="BirdPrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические птицы</h5>
+            <p>Топ-5 самых прототипических птиц по результатам анкеты.</p>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="static/pie_plants.png" class="d-block w-100" alt="PlantPrototype">
+         <div class="carousel-caption d-none d-md-block">
+            <h5>Прототипические растения</h5>
+            <p>Топ-5 самых прототипических растений по результатам анкеты.</p>
+         </div>
+      </div>
+   </div>
+   <a class="carousel-control-prev" href="#ProtoCarousel" role="button" data-slide="prev">
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#ProtoCarousel" role="button" data-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+   </a>
+</div>
+<br>
+{% endblock %}

@@ -1,0 +1,80 @@
+<!-- form.html -- страница с анкетой -->
+{% extends 'base.html' %}
+{% block title %} Анкета {% endblock %}
+<!-- источник: https://getbootstrap.com/docs/4.5/components/forms/ -->
+{% block content %}
+<h2 align="center"> Сбор данных </h2>
+<form action="/data_collection">
+   <br>
+   <h4 align="center"> Мета-информация </h4>
+   <div class="form-group">
+      <label for="Question1">1. Введите Ваш возраст:</label>
+      <input type="text" class="form-control" name="age" id="Question1" placeholder="21">
+   </div>
+   <div class="form-group">
+      <label for="Question2">2. Выберите любимое время года:</label>
+      <select class="form-control" name="season" id="Question2">
+         <option>Зима</option>
+         <option>Весна</option>
+         <option>Лето</option>
+         <option>Осень</option>
+      </select>
+   </div>
+   <div class="form-group">
+      <label for="Question3">3. Выберите любимую планету в Солнечной системе:</label>
+      <select class="form-control" name="planet" id="Question3">
+         <option>Меркурий</option>
+         <option>Венера</option>
+         <option>Земля</option>
+         <option>Марс</option>
+         <option>Юпитер</option>
+         <option>Сатурн</option>
+         <option>Уран</option>
+         <option>Нептун</option>
+         <option>Плутон</option>
+      </select>
+   </div>
+   <div class="form-group">
+      <label for="Question4">4. Вы любите помидоры?</label>
+      <select class="form-control" name="tomatoes" id="Question4">
+         <option>Да</option>
+         <option>Нет</option>
+      </select>
+   </div>
+   <br>
+   <h4 align="center"> Прототипы </h4>
+   <br>
+   <p> Вам необходимо ввести название <b>одного</b> объекта: первого, который
+      приходит Вам в голову, когда вас просят назвать типичного представителя
+      указанного в вопросе класса.
+   </p>
+   <div class="form-group">
+      <label for="Question5">5. Введите название фрукта:</label>
+      <textarea class="form-control" name="fruits" id="Question5" rows="1"></textarea>
+   </div>
+   <div class="form-group">
+      <label for="Question6">6. Введите название овоща:</label>
+      <textarea class="form-control" name="vegetables" id="Question6" rows="1"></textarea>
+   </div>
+   <div class="form-group">
+      <label for="Question7">7. Введите название ореха:</label>
+      <textarea class="form-control" name="nuts" id="Question7" rows="1"></textarea>
+   </div>
+   <div class="form-group">
+      <label for="Question8">8. Введите название ягоды:</label>
+      <textarea class="form-control" name="berries" id="Question8" rows="1"></textarea>
+   </div>
+   <div class="form-group">
+      <label for="Question9">9. Введите название птицы:</label>
+      <textarea class="form-control" name="birds" id="Question9" rows="1"></textarea>
+   </div>
+   <div class="form-group">
+      <label for="Question10">10. Введите название растения:</label>
+      <textarea class="form-control" name="plants" id="Question10" rows="1"></textarea>
+   </div>
+   <div class="text-center">
+      <button type="submit" class="btn btn-secondary" style="background-color: #b4a7d6;">Отправить</button>
+   </div>
+</form>
+<br>
+{% endblock %}

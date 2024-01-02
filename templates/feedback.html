@@ -1,0 +1,22 @@
+<!-- feedback.html -- форма для сбора отзывов -->
+{% extends 'base.html' %}
+{% block title %} Обратная связь {% endblock %}
+{% block content %}
+<h2 align="center">Обратная связь</h2>
+<br>
+<p align="center"> Помогите данному сайту стать лучше! </p>
+<p align="center">
+   Поделитесь в свободной форме, как можно улучшить анкету и/или
+   интерфейс.
+</p>
+<!-- источник: https://getbootstrap.com/docs/4.5/components/forms/ -->
+<form action="/feedback_collection">
+   <div class="form-group">
+      <label for="Feedback"></label>
+      <textarea class="form-control" id="Feedback" name="Feedback" rows="4" placeholder="Текст Вашего отзыва."></textarea>
+   </div>
+   <div class="text-center">
+      <button type="submit" class="btn btn-secondary" style="background-color: #b4a7d6;">Отправить</button>
+   </div>
+</form>
+{% endblock %}
