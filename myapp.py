@@ -21,7 +21,7 @@ app = Flask(__name__)
 @app.route("/data_collection")
 def update_data():
     # открываем файл, где мы храним все данные на дозапись
-    with open("data.csv", "a") as file:
+    with open("/home/fromdeath2morning/FlaskPrototypesApp/data.csv", "a") as file:
         # сбор данных
         new_data = [
             request.args["age"],
@@ -63,7 +63,7 @@ def form():
 # рендер страницы со статистикой
 @app.route("/stats")
 def stats():
-    df = pd.read_csv("data.csv")
+    df = pd.read_csv("/home/fromdeath2morning/FlaskPrototypesApp/data.csv")
 
     # идея с redirect на страницу анкеты, если не собрано никаких данных
     # взята отсюда https://github.com/hse-ling-python/seminars/blob/master/flask_applications/flask_2.ipynb
@@ -154,7 +154,7 @@ def feedback():
 @app.route("/feedback_collection")
 def feedback_collection():
     # открываем файл с отзывами на дозапись
-    with open("feedback.txt", "a") as file:
+    with open("/home/fromdeath2morning/FlaskPrototypesApp/feedback.txt", "a") as file:
         # записываем сам отзыв + по приколу время, в которое он был отправлен
         file.write(f"{datetime.now()}\t{request.args['Feedback']}\n")
 
