@@ -40,7 +40,7 @@ def update_data():
         # отдельно обрабатываем возраст и заменяем его на 0, чтобы
         # потом можно было считать числовое среднее значение
         if new_data[0] == "":
-            new_data[0] = 0
+            new_data[0] = "0"
         for i in range(1, len(new_data)):
             if new_data[i] == "":
                 new_data[i] = "None"
